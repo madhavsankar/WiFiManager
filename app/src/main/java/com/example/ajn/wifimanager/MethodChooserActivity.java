@@ -45,7 +45,7 @@ public class MethodChooserActivity extends AppCompatActivity {
     private FingerprintManager.CryptoObject cryptoObject;
     private FingerprintManager fingerprintManager;
     private KeyguardManager keyguardManager;
-
+    public Wififragment newFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +56,11 @@ public class MethodChooserActivity extends AppCompatActivity {
         generator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                newFragment = new Wififragment();
+                newFragment.show(getSupportFragmentManager(), "Fragment");
+
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     //Get an instance of KeyguardManager and FingerprintManager//
@@ -190,5 +195,8 @@ public class MethodChooserActivity extends AppCompatActivity {
         Intent intent = new Intent(context,QRGeneratorActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
+
     }
+
+
 }
