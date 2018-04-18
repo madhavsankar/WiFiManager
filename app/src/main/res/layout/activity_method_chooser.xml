@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,15 +7,57 @@
     android:orientation="vertical"
     tools:context=".MethodChooserActivity">
 
-    <Button
-        android:id="@+id/button_generator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Generator" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        app:srcCompat="@drawable/wifi" />
 
     <Button
         android:id="@+id/button_scanner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Scanner" />
-</LinearLayout>
+        android:layout_width="88dp"
+        android:layout_height="36dp"
+        android:layout_alignStart="@+id/imageButton3"
+        android:layout_below="@+id/imageButton3"
+        android:layout_marginTop="-197dp"
+        android:onClick="scan"
+        android:text="Scan" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="94dp"
+        android:layout_height="86dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/imageButton3"
+        android:layout_marginStart="57dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/qr"
+        android:onClick="gen"/>
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="88dp"
+        android:layout_height="83dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="197dp"
+        android:layout_marginEnd="70dp"
+        android:adjustViewBounds="true"
+        android:onClick="scan"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/scanit" />
+
+    <Button
+        android:id="@+id/button_generator"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_alignStart="@+id/imageButton2"
+        android:layout_below="@+id/imageButton2"
+        android:text="GENERATE"
+        android:onClick="gen"/>
+
+</RelativeLayout>
